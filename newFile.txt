@@ -1,0 +1,181 @@
+┌──(ashutosh㉿kali)-[~]
+└─$ git --version
+git version 2.30.0
+                                                                             
+┌──(ashutosh㉿kali)-[~]
+└─$ pwd
+/home/ashutosh
+                                                                             
+┌──(ashutosh㉿kali)-[~]
+└─$ mkdir myRepository
+                                                                             
+┌──(ashutosh㉿kali)-[~]
+└─$ ls
+Desktop    Downloads  myRepository  Public     Videos
+Documents  Music      Pictures      Templates
+                                                                             
+┌──(ashutosh㉿kali)-[~]
+└─$ cd myRepository 
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ ls
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git init     
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all                                                                            
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/ashutosh/myRepository/.git/
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ touch newFile.txt
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ ls
+newFile.txt
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        newFile.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git add newFile.txt 
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git status         
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   newFile.txt
+
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git config --global user.email ashutosh.anshu2@gmail.com
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git config --global user.name ashutoshanshu1           
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git commit -m "First draft of myFile.txt"   
+[master (root-commit) fc9d315] First draft of myFile.txt
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newFile.txt
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git status                                              
+On branch master
+nothing to commit, working tree clean
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git checkout -b FirstBranch              
+Switched to a new branch 'FirstBranch'
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git branch                 
+* FirstBranch
+  master
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ ks     
+Sorry, command-not-found has crashed! Please file a bug report at:
+http://www.debian.org/Bugs/Reporting
+Please include the following information with the report:
+
+command-not-found version: 0.3
+Python version: 3.9.1 final 0
+Distributor ID: Kali
+Description:    Kali GNU/Linux Rolling
+Release:        2021.1
+Codename:       kali-rolling
+Exception information:
+
+unable to open database file
+Traceback (most recent call last):
+  File "/usr/share/command-not-found/CommandNotFound/util.py", line 23, in crash_guard
+    callback()
+  File "/usr/lib/command-not-found", line 90, in main
+    cnf = CommandNotFound.CommandNotFound(options.data_dir)
+  File "/usr/share/command-not-found/CommandNotFound/CommandNotFound.py", line 79, in __init__
+    self.db = SqliteDatabase(dbpath)
+  File "/usr/share/command-not-found/CommandNotFound/db/db.py", line 12, in __init__
+    self.con = sqlite3.connect(filename)
+sqlite3.OperationalError: unable to open database file
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ ls                                                                 127 ⨯
+newFile.txt
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ vim newFile.txt 
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git status                                              
+On branch FirstBranch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   newFile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git config --global user.email ashutosh.anshu2@gmail.com
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git config --global user.name ashutoshanshu1            
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git commit -m "First draft of myFile.txt"               
+On branch FirstBranch
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   newFile.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git branch                                                           1 ⨯
+* FirstBranch
+  master
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git remote add origin https://github.com/ashutoshanshu1/firstStep.git
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ git push -u origin FirstBranch                                       
+Username for 'https://github.com': ashutoshanshu1
+Password for 'https://ashutoshanshu1@github.com': 
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 227 bytes | 227.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/ashutoshanshu1/firstStep.git
+ * [new branch]      FirstBranch -> FirstBranch
+Branch 'FirstBranch' set up to track remote branch 'FirstBranch' from 'origin'.
+                                                                             
+┌──(ashutosh㉿kali)-[~/myRepository]
+└─$ 
+
+
+
+
+
